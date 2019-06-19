@@ -1,0 +1,7 @@
+{
+  "name": "ionic-custom-icon",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
