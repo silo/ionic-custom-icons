@@ -1,0 +1,36 @@
+$icon-size: 0.9em; // change width to get same size as the default icon set from ionic
+$icon-prefix: dsb;
+ion-icon {
+  &[class*="#{$icon-prefix}-"] {
+    mask-size: contain;
+    mask-position: 50% 50%;
+    mask-repeat: no-repeat;
+    background: currentColor;
+    width: $icon-size;
+    height: $icon-size;
+  }
+}
+
+@mixin makeIcon($arg, $color: default, $custom-name: default) {
+  ion-icon {
+    &[class*="#{$icon-prefix}-#{$arg}"] {
+      @if $custom-name == default {
+        mask-image: url(../assets/icons/#{$arg}.svg);
+      } @else {
+        mask-image: url(../assets/icons/#{$custom-name}.svg);
+      }
+
+      @if $color != default {
+        background-color: #{$color}
+      }
+    }
+  }
+}
+
+@include makeIcon(crown, orange); // changed color
+@include makeIcon(settings, default, setting); // changed the name from setting to settings
+@include makeIcon(global, green);
+@include makeIcon(photo);
+@include makeIcon(text);
+@include makeIcon(chat);
+@include makeIcon(clock);
