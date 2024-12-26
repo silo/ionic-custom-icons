@@ -1,5 +1,7 @@
 # Custom ionic icons from SVG files
 
+## DO NOT USE, DEPRECATED
+
 ### Usage
 ```
 HTML:
